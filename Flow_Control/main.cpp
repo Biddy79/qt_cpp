@@ -1,5 +1,6 @@
 ﻿#include <QCoreApplication>
 #include <QDebug>
+#include <array>
 #include <iostream>
 
 int main(int argc, char *argv[])
@@ -28,25 +29,32 @@ int main(int argc, char *argv[])
     }
 
 
-
-    std::string passWord;
-    qInfo() << "Enter password: ";
-    std::cin >> passWord;
-
     //terrnary operator
 
+    std::string passWord;
+    qInfo() << "Enter password. Password must be entered in lower case. hint used to turn over the T.V : ";
+    std::cin >> passWord;
+
     //if true            do this                      else do this
-    passWord == "moto" ? qInfo("Password correct ") : qFatal("Password Incorect !!!!!!! program stopped");
+    passWord == "remote" ? qInfo("Password correct ") : qFatal("Password Incorect !!!!!!! program stopped");
 
 
 
 
+    //for loop
+
+    std::array<int,3> seatAvailabel = {43, 12, 10};
+    for(unsigned int i=0; i < seatAvailabel.size(); i++){
+        qInfo() << "Number of seats availabel is row " << i << ": " << seatAvailabel[i];
+    }
+
+
+
+    //switch
 
     int seatRow;
     qInfo() << "Enter number of row you require. Note only seat row 1, 2 and 3 are availabel !!";
     std::cin >> seatRow;
-
-    //switch
 
     switch (seatRow) {
     case 1:
@@ -63,6 +71,22 @@ int main(int argc, char *argv[])
 
     }
 
+
+    //do while loop
+
+    int money;
+    //do this
+    do{
+    qInfo() << "Enter a ammount of deposit to be payed. value must be more than £10 ";
+
+    std::cin >> money;
+    //if money is grater than 10 do this
+    if(money > 10){
+        qInfo() << "You are depositing £" << money  << " to your seats" ;
+         }
+    }
+    //while money is less than 10
+    while(money < 10);
 
     return a.exec();
 }
