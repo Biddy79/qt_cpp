@@ -7,6 +7,29 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    //count loop
+    int input;
+
+
+    qInfo() << "Entered a max number";
+    std::cin >> input;
+
+    if(input == 0){
+        qFatal("You entered an invalid input");
+    }
+
+       for(int i=1; i <= input; i++){
+            qInfo() << ": " << i;
+        }
+
+
+    //same as above omly using while loop
+    /*
+    int startNum = 1;
+    while(startNum < input || startNum == input){
+        qInfo() << ":" << startNum++;
+    }
+    */
 
 
     //if statment
