@@ -11,3 +11,9 @@ MainWindow::~MainWindow()
 }
 
 
+
+void MainWindow::on_pushButtonClose_clicked()
+{
+    ui->label->setText("Button Clicked!!!");
+
+}
